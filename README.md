@@ -1,12 +1,12 @@
-# **code null versioning 1.0.0.0 (CNV)**
+# **code null versioning 1.0.0.1 (CNV)**
 
 The CNV provides a rather simple schema. It is based on [Semantic Versioning](https://semver.org/), but with a rule set, that is applicable to a broader range of projects.
 
 A version string has the following structure and only consists of numbers. The parts that are in brackets are optional. Every bracket pair can be combined with every other or be left out entirely. But what is inside must always be there. When using these, the meaning must be specified in the README. For that the following destructuring can be used.
 
-Structure: (prefix)w.x.y.z(dot)(dash)(\*)(-S)
+**Structure:** (prefix)w.x.y.z(dot)(dash)(\*)(-S)
 
-Destructured:
+**Destructured:**
 
 - prefix: A prefix like "v" to indicate that is a version number
 - w: Use for major versions
