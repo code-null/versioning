@@ -1,4 +1,4 @@
-# **code null versioning 1.0.0.1 (CNV)**
+# **code null versioning 1.0.0.2 (CNV)**
 
 The CNV provides a rather simple schema. It is based on [Semantic Versioning](https://semver.org/), but with a rule set, that is applicable to a broader range of projects.
 
@@ -82,13 +82,13 @@ These are released when new smaller functionality was added, other changes where
 The following cases should always lead to a new minor version:
 
 - A new part was added in software (e.g.: new area in a program/website/blog, additional APIs on a server, new attributes on a component, new class member)
-- A new part was added in other cases (e.g.: new section in a document, new arrangement on a floor plan, second handle for a pot))
+- A new part was added in other cases (e.g.: new section in a document, new arrangement on a floor plan, second handle for a pot)
 - Some parts were moved to a different position (e.g.: file input is now at the top instead bottom, section b now comes before section a, the arrangement of buttons on a remote control changed)
 - A security issue was fixed
 
 ### **Optimization (y)**
 
-This part is increased whenever bug fixes, changes in the (code) structure or other optimization are released. The word "bug" is not strictly meant for coding projects, but also refers to everything else that leads to unwanted behavior or consequences.
+This part is increased whenever bug fixes, changes in the (code) structure or other optimization are released. This may also include minor changes in the visual appearance or the the addition of a small piece of information. The word "bug" is not strictly meant for coding projects, but also refers to everything else that leads to unwanted behavior or consequences.
 
 The following cases should always lead to a new optimization version:
 
