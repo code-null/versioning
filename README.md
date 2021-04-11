@@ -1,10 +1,10 @@
-# **code null versioning 1.0.0.2 (CNV)**
+# **code null versioning 1.1.0.0 (CNV)**
 
 The CNV provides a rather simple schema. It is based on [Semantic Versioning](https://semver.org/), but with a rule set, that is applicable to a broader range of projects.
 
 A version string has the following structure and only consists of numbers. The parts that are in brackets are optional. Every bracket pair can be combined with every other or be left out entirely. But what is inside must always be there. When using these, the meaning must be specified in the README. For that the following destructuring can be used.
 
-**Structure:** (prefix)w.x.y.z(dot)(dash)(\*)(-S)
+**Structure:** (prefix)w.x.y.z(dot)(dash)(suffix)(-S)
 
 **Destructured:**
 
@@ -15,28 +15,31 @@ A version string has the following structure and only consists of numbers. The p
 - z: Use for small styling changes, typo fixes or minor code changes, that do not impact the functionality
 - dot: optional dot for separating the next part
 - dash: optional dash for separating the next part
-- \*: can be a letter or number, to indicate any further changes
+- suffix: can be a letter or number, to indicate any further changes
 - \-S: The current stage of the project (alpha, pre-alpha, etc.)
 
 ## **Rules**
 
-The following rules apply when changing the version number. While some points might appear logical, they are still explicitly named.
+The following rules need to be followed to be in line with CNV. While some points might appear logical, they are still explicitly named.
 
-1. A version number must always go up
+1. A project always starts at version 0.1.0.0
+2. A version number must always go up
    - The same applies to letters if used
-2. Increments are only allow in single steps
+3. Increments are only allowed in single steps
    - E.g.: No skipping from 1.1.2.0 to 1.1.4.0
-3. A project always starts at version 0.1.0.0
 4. When increasing a part of a version number, all lower parts must be reset to 0
-   - An increase in the stage must reset the version to 0.1.0.0
-   - If it is the first complete release the first version starts at 1.0.0.0
-5. The stage addition must not be added or removed in the middle of versioning and be either present from the beginning or not at all
-   - Exception: If a stable production ready version is released, the stage addition may be dropped
-6. A release may contain multiple smaller changes
-   - E.g.: a major release may contain bug fixes as well
-7. A prefix must not change whatsoever and must be present from the very beginning or not at all
-8. All versions with major version 1 or higher are considered production ready, if they have dedicated releases
+5. All versions with major version 1 or higher are considered production ready, if they have dedicated releases
    - Exception: If the stage is specified in the version string
+6. The stage addition must not be added or removed in the middle of versioning and be either present from the beginning or not at all
+   - Exception: If a stable production ready version is released, the stage addition may be dropped, but not added back later
+7. An increase in the stage must reset the version to 0.1.0.0
+   - Exception: If it is a production release with a stage addition, the version must be set to x.0.0.0, where x is the latest major version number
+   - Exception: If it is the first production ready release it still starts at 1.0.0.0
+8. A release may contain multiple smaller changes, that would fall into a lower category
+   - E.g.: a major release may contain bug fixes as well
+9. A prefix must not change whatsoever and must be present from the very beginning or not at all
+10. A suffix must be present from the very beginning or not at all
+11. If a suffix is used, it's meaning and incrementing rules must be defined in the README or another suitable place
 
 ## Use cases
 
@@ -118,6 +121,10 @@ The following cases should always lead to a new style version:
 - Existing texts, strings, buttons etc. were formatted differently
 - Details on a design changed
 
+### **Suffix**
+
+These optional parameters can be anything that makes sense for that project. For further differentiation numbers or letters can be added, separated by a dash or a dot. They still need to follow the basic rule of always increasing and resetting when a higher part is increased. However in which cases these change, can be freely defined. Those rules must be documented in the README or another suitable place.
+
 ### **Project Stage**
 
 The project stage addition changes whenever the project changes from one stage to another. Every change in that part results in a reset of all previous parts. If the project is still in active development (pre-alpha, alpha, beta, etc.) this addition must be kept, until the first stable production ready release.
@@ -125,10 +132,6 @@ The project stage addition changes whenever the project changes from one stage t
 There are no specific rules, for when to move from one stage to another. It is recommended to define in advance which features or contents must be present to consider it a new development stage.
 
 For non-coding projects this part might not be relevant, but if used it must follow the same rules,
-
-### **Optional Parameters**
-
-These optional parameters can be anything that makes sense for that project. For further differentiation numbers or letters can be added, separated by a dash or a dot. They still need to follow the basic rule of always increasing and resetting when a higher part is increased. However in which cases these change, can be freely defined. Those rules must be documented in the README.
 
 ## **Version Examples**
 
