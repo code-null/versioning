@@ -1,4 +1,4 @@
-# **code null versioning 1.1.0.0 (CNV)**
+## code null versioning 1.1.0.1 (CNV)
 
 The CNV provides a rather simple schema. It is based on [Semantic Versioning](https://semver.org/), but with a rule set, that is applicable to a broader range of projects.
 
@@ -6,7 +6,7 @@ A version string has the following structure and only consists of numbers. The p
 
 **Structure:** (prefix)w.x.y.z(dot)(dash)(suffix)(-S)
 
-**Destructured:**
+### Destructured
 
 - prefix: A prefix like "v" to indicate that is a version number
 - w: Use for major versions
@@ -18,7 +18,7 @@ A version string has the following structure and only consists of numbers. The p
 - suffix: can be a letter or number, to indicate any further changes
 - \-S: The current stage of the project (alpha, pre-alpha, etc.)
 
-## **Rules**
+## Rules
 
 The following rules need to be followed to be in line with CNV. While some points might appear logical, they are still explicitly named.
 
@@ -59,11 +59,11 @@ The code null versioning can be used for the following things:
 - Product Designs
 - Plans, Flow Charts, etc.
 
-## **Increasing the version numbers**
+## Increasing the version numbers
 
 The following guidelines will help decide whether or not to change the version.
 
-### **Major (w)**
+#### Major (w)
 
 These are released when there was a lot of change in functionality. The comparison base is always the initial release of the previous major version. Example: The current version is 3.3.6.1. A jump to version 4.0.0.0 seems reasonable, thus the changes are compared relative to version 3.0.0.0.
 
@@ -78,7 +78,7 @@ If someone ever get the feeling, that what was changed is a lot different from w
 
 For on going projects, that do not have dedicated releases, but rather change over time in small steps, major version increases by overflowing from minor versions.
 
-### **Minor (x)**
+#### Minor (x)
 
 These are released when new smaller functionality was added, other changes where made that the end user can notice or a security issue was fixed.
 
@@ -89,7 +89,7 @@ The following cases should always lead to a new minor version:
 - Some parts were moved to a different position (e.g.: file input is now at the top instead bottom, section b now comes before section a, the arrangement of buttons on a remote control changed)
 - A security issue was fixed
 
-### **Optimization (y)**
+#### Optimization (y)
 
 This part is increased whenever bug fixes, changes in the (code) structure or other optimization are released. This may also include minor changes in the visual appearance or the the addition of a small piece of information. The word "bug" is not strictly meant for coding projects, but also refers to everything else that leads to unwanted behavior or consequences.
 
@@ -108,7 +108,7 @@ Some examples for what is considered a bug outside of coding projects:
 - On a website an old link is still present
 - On a floor plan the wrong dimensions were used for the placement of an item
 
-### **Style (z)**
+#### Style (z)
 
 Style updates only include very minor changes, that do not impact the product or project in a meaningful way.
 
@@ -121,11 +121,11 @@ The following cases should always lead to a new style version:
 - Existing texts, strings, buttons etc. were formatted differently
 - Details on a design changed
 
-### **Suffix**
+#### Suffix
 
 These optional parameters can be anything that makes sense for that project. For further differentiation numbers or letters can be added, separated by a dash or a dot. They still need to follow the basic rule of always increasing and resetting when a higher part is increased. However in which cases these change, can be freely defined. Those rules must be documented in the README or another suitable place.
 
-### **Project Stage**
+#### Project Stage
 
 The project stage addition changes whenever the project changes from one stage to another. Every change in that part results in a reset of all previous parts. If the project is still in active development (pre-alpha, alpha, beta, etc.) this addition must be kept, until the first stable production ready release.
 
@@ -133,7 +133,7 @@ There are no specific rules, for when to move from one stage to another. It is r
 
 For non-coding projects this part might not be relevant, but if used it must follow the same rules,
 
-## **Version Examples**
+## Version Examples
 
 The following is an example of a versioning history for a component using the CNV. This is not a complete history and just highlights some examples.
 
